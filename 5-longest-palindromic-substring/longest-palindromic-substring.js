@@ -20,9 +20,9 @@ var longestPalindrome = function(s) {
     let longest = [0, 0];
     const helper = (l, r) => {
         while (s[l] === s[r] && l >= 0 && r < s.length) {
-        if (r - l > longest[1] - longest[0]) longest = [l, r];
-        l--;
-        r++;
+            if (r - l > longest[1] - longest[0]) longest = [l, r];
+            l--;
+            r++;
         }
     };
     for (let i = 0; i < s.length; i++) {
