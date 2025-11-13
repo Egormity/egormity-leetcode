@@ -12,8 +12,8 @@ var reverse = function(x) {
     while (x !== 0) {
         digit = x % 10;
         result = result * 10 + digit;
+        if (result < -max || result > max + 1) return 0;
         x = Math.trunc(x / 10);
     };
-    if (result < -max || result > max + 1) return 0;
     return result;
 };
