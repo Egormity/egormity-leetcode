@@ -36,14 +36,12 @@ var reverse = function(x) {
     // const result = +(x + "").slice(isNegative ? 1 : 0).split("").reverse().join("") * (isNegative ? -1 : 1);
     // if (result < -max || result > max + 1) return 0;
     // return result;
-    // let result = 0;
-    // while (x !== 0) {
-    //     digit = x % 10;
-    //     result = result * 10 + digit;
-    //     if (result < -max || result > max + 1) return 0;
-    //     x = Math.trunc(x / 10);
-    // };
-    // return result;
-    const reversed = parseInt(Math.abs(x).toString().split('').reverse().join('')) * Math.sign(x);
-    return (reversed <= 0x7FFFFFFF && reversed >= -0x80000000) ? reversed : 0;
+    let result = 0;
+    while (x !== 0) {
+        digit = x % 10;
+        result = result * 10 + digit;
+        if (result < -max || result > max + 1) return 0;
+        x = Math.trunc(x / 10);
+    };
+    return result;
 };
